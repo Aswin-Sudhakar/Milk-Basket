@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Orders Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <section id="header">
@@ -14,47 +14,34 @@
         </a>
         <div>
             <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html" class="active">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/pages/shop.html">Shop</a></li>
+                <li><a href="/pages/about.html">About</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
                 <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </div>
     </section>
 
     <div class="container mt-5">
-        <h1 class="mb-4">Shop</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./img/products/f1.jpg" class="card-img-top" alt="Product 1">
-                    <div class="card-body">
-                        <h5 class="card-title">A2 Fresh Semi-Skimmed Milk</h5>
-                        <p class="card-text">100% Natural</p>
-                        <p class="card-text">₹78</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="./img/products/f2.jpg" class="card-img-top" alt="Product 2">
-                    <div class="card-body">
-                        <h5 class="card-title">HERSHEY’S a2 Milk® 8oz Single Serve</h5>
-                        <p class="card-text">100% Natural</p>
-                        <p class="card-text">₹40</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <!-- brk -->
-        </div>
+        <h1 class="mb-4">Orders Portal</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody id="order-list">
+                <!-- Orders will be dynamically added here --> 
+            </tbody>
+        </table>
     </div>
 
     <footer class="section-p1">
         <div class="col">
-            <img class="logo"    src="./img/logo.png" alt="">
+            <img class="logo" src="./img/logo.png" alt="">
             <p><strong>Contact</strong></p>
             <p><strong>Address:</strong> B3, Chandigarh University</p>
             <p><strong>Phone</strong> +91 8111811105 ,+91 9592872749<p>
@@ -84,11 +71,31 @@
             <p>Track my order</p>
             <p>Help</p>
         </div>
-
-        </div>
     </footer>
 
-
-    <script src="./script.js"></script>
+    <script src="./orders.js"></script>
+    <script>// Sample orders data
+        const orders = [
+            { id: 1, productName: "Order 1", price: "₹10" },
+            { id: 2, productName: "Order 2", price: "₹20" },
+            { id: 3, productName: "Order 3", price: "₹15" },
+        ];
+        
+        function displayOrders() {
+            const orderList = document.getElementById('order-list');
+            orderList.innerHTML = ''; 
+            orders.forEach((order, index) => {
+                const row = `<tr>
+                                <th scope="row">${index + 1}</th>
+                                <td>${order.productName}</td>
+                                <td>${order.price}</td>
+                            </tr>`;
+                orderList.innerHTML += row;
+            });
+        }
+                window.onload = function() {
+            displayOrders();
+        };
+        </script>
 </body>
 </html>
