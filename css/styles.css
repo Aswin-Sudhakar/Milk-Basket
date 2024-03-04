@@ -50,6 +50,21 @@ p{
 .section-m1{
     margin: 40px 0px;
 }
+.normal{
+    font-size: 14px;
+    font-weight:600;
+    padding: 15px 30px;
+    color: black;
+    background-color: antiquewhite;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: 0.2s;
+    border-radius: 4px;
+    width: 130px;
+
+
+}
 
 body{
     width: 100%;
@@ -371,3 +386,58 @@ footer{
     height: 100%;
     border: 0;
 }
+.contact-form-box button{
+    width: 100%;
+    padding: 15px 30px;
+    color: #fff;
+    background-color: #088178;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: 0.2s;
+    border-radius: 4px;
+    margin: 15px 0;
+
+}
+.contact-main{
+
+}
+
+.contact-contaier{
+    display: flex;
+}
+.contact-form-box{
+    width: 50%;
+    padding: 0 40px;
+    text-align: center;
+    border: 1px solid #e3e6f3;
+
+}
+.contact-box-1{
+    padding: 20px;
+    border: 1px solid #e3e6f3;
+    
+
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  .contact-container-main{
+    justify-content: center;
+    align-items: center ;
+    
+  }
+.info-map{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20pxa;
+    text-align: center;
+    border: 1px solid #e3e6f3;
+}
+
